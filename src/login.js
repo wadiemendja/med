@@ -12,7 +12,7 @@ const alarm = document.getElementById('alarm');
 
 // change image
 const imgDiv = document.querySelector('.admin-img');
-imgDiv.innerHTML = `<img src="../img/${userType}.png"/>`
+imgDiv.innerHTML = `<img src="./img/${userType}.png"/>`
 
 // click listener 
 loginBtn.addEventListener('click', (event) => {
