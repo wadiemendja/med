@@ -1,0 +1,27 @@
+.container {
+    max-width: 350px;
+    margin: 20px auto;    
+}
+
+.container div img {
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+}
+
+.container>div {
+    padding: 10px ;
+    border: solid gray 2px;
+    border-radius: 6px;
+    margin: 50px auto;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.container div:hover {
+    background-color: lightgray;
+}
+
+.container>div>div {
+    text-align: center;
+}
