@@ -1,0 +1,59 @@
+#posts {
+    width: 95%;
+    max-width: 700px;
+    margin: 20px auto;
+    display: none;
+}
+
+#posts div .user-image {
+    width: 70px;
+    border-radius: 10%;
+    border: lightblue 2px solid;
+    padding: 1px;
+    margin-bottom: 10px;
+}
+
+.user .info{padding: 10px; margin-top: -12px;}
+#date{font-size: 12px; color: darkgray;}
+
+.post {
+    margin-top: 10px; 
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+#loader {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#uploadedImgs img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+#uploadedVid video {
+    width: 100%;
+    margin-top: 10px;
+}
+
+#uploadedFiles div {
+    border: sloid lightgray 2px;
+    border-radius: 15px;
+    background-color: lightblue;
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#uploadedAudio audio {
+    width: 90%;
+    margin-top: 10px;
+}
