@@ -19,7 +19,7 @@ const usernameTag = document.getElementById('username');
 const firebaseRef = firebase.database().ref('users/' + username);
 
 // title
-document.title = 'E-Learnin | ' + username;
+document.title = 'Patient | ' + username;
 
 // adding user details (profile img username...)
 firebaseRef.once('value', (sanp) => {
@@ -36,7 +36,21 @@ const uploadedFilesAria = document.getElementById('uploadedFiles');
 const uploadedAudioAria = document.getElementById('uploadedAudio');
 const media = document.querySelector('.media');
 const sharedDiv = document.getElementById('sharedAlert');
-const postsDiv = document.getElementById('posts')
+const postsDiv = document.getElementById('posts');
+const replies = document.getElementById('replies');
+const repliesRef = firebase.database().ref('users/'+ username+ "/posts/");
+
+repliesRef.once('value', (snap)=> {
+    const data = snap.val();
+    for (let i in data){
+        const comments = data[i].replies;
+        for (let j in comments)
+        replies.innerHTML += 
+        `<div class="alert alert-dark" role="alert" style="margin: 10px 0">
+            ${comments[j]}
+        </div>`;
+    }
+});
 
 // share button
 shareClassBtn.addEventListener('click', () => {

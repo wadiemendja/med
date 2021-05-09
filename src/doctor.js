@@ -82,12 +82,14 @@ usersRef.once('value', (sanp) => {
             const reply = el.parentNode.querySelector('input').value;
             const parentNode2 = el.parentNode.parentNode;
             const patientUsername = parentNode2.querySelector('.patient-username').innerText.substr(1);
-            const postText = parentNode2.querySelector('.post-txt').innerHTML;
+            const postText = parentNode2.querySelector('.post-txt').innerHTML.replaceAll("<br>", "</br>");
             const userRef = firebase.database().ref('users/'+ patientUsername + "/posts");
             userRef.once('value', (snap)=> {
                 const posts = snap.val();
                 const PostKeys = Object.keys(posts);
                 for(let i =0 ; i< PostKeys.length ; i++){
+                    console.log(postText);
+                    console.log(posts[PostKeys[i]].text)
                     if (posts[PostKeys[i]].text == postText){
                         const repliesRef = firebase.database().ref('users/'+ patientUsername + '/posts/'+PostKeys[i]+'/replies');
                         repliesRef.push(reply);
