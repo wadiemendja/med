@@ -1,0 +1,19 @@
+.profile-img img {
+    display: block;
+    margin: 0 auto;
+    width: 140px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.profile-img div {
+    text-align: center;
+}
+
+.profile-img input {
+    visibility: collapse;
+}
+
+.spinner-border {
+    display: none;
+}
