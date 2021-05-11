@@ -13,6 +13,7 @@
         defer></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-storage.js"></script>
     <script type="module" src="../src/doctor.js"></script>
     <title></title>
 </head>
@@ -40,7 +41,7 @@
                             More options
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Upload files</a></li>
+                            <li><a class="dropdown-item profile-dropped-btn" href="#">Profile</a></li>
                             <li><a class="dropdown-item" href="#">Another action</a></li>
                             <li>
                                 <hr class="dropdown-divider">
@@ -61,7 +62,7 @@
     </nav>
     <div class="body-container">
         <div id="loader">
-            <div class="spinner-border" role="status">
+            <div class="spinner-border" id="spinner1" role="status">
                 <span class="visually-hidden">Loading...</span>
             </div>
         </div>

@@ -16,7 +16,10 @@ usersRef.once('value', (snap) => {
             return;
         }
     }
-    if (userNotFound) body.style.filter = "blur(0px)";
+    if (userNotFound) {
+        document.title = "Login as"
+        body.style.filter = "blur(0px)";
+    }
 });
 
 function renderProfile(username) {
@@ -54,10 +57,6 @@ function renderProfile(username) {
                                             <div class="col-sm-6">
                                                 <p class="m-b-10 f-w-600">Date of birth</p>
                                                 <h6 class="text-muted f-w-400">${user.birthday}</h6>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <p class="m-b-10 f-w-600">Phone</p>
-                                                <h6 class="text-muted f-w-400">${user.phone}</h6>
                                             </div>
                                         </div>                                
                                     </div>

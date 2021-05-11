@@ -41,6 +41,8 @@ signupBtn.addEventListener('click', (event) => {
     const fullName = document.getElementById('fullName').value;
     const type = document.querySelector('.form-select').value;
     const birthday = document.getElementById('birthday').value;
+    const phone = document.getElementById('phone').value;
+    const email = document.getElementById('email').value;
     const newUserRef = firebase.database().ref('users/' + username);
     const usersRef = firebase.database().ref('users');
     usersRef.once('value', (sanp) => {
@@ -59,7 +61,9 @@ signupBtn.addEventListener('click', (event) => {
                 fullName: fullName,
                 type: type,
                 img: imgUrl,
-                birthday: birthday
+                birthday: birthday,
+                email: email,
+                phone: phone
             }
             newUserRef.set(data);
             resetForm();
