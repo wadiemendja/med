@@ -1,15 +1,15 @@
-.container {
+.container-x {
     max-width: 350px;
     margin: 20px auto;    
 }
 
-.container div img {
+.container-x div img {
     display: block;
     margin: 0 auto;
     width: 200px;
 }
 
-.container>div {
+.container-x>div {
     padding: 10px ;
     border: solid gray 2px;
     border-radius: 6px;
@@ -18,10 +18,10 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
-.container div:hover {
+.container-x div:hover {
     background-color: lightgray;
 }
 
-.container>div>div {
+.container-x>div>div {
     text-align: center;
 }

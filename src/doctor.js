@@ -28,6 +28,11 @@ firebaseRef.once('value', (sanp) => {
     usernameTag.innerText = username;
 });
 
+// on click usernameTag
+usernameTag.addEventListener('click', ()=> {
+    location.href = "/"+ username;
+});
+
 // show posts
 usersRef.once('value', (sanp) => {
     const users = sanp.val();
