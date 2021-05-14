@@ -107,7 +107,7 @@ usersRef.once('value', (sanp) => {
     commentBtns.forEach(element => {
         element.addEventListener('click', (event) => {
             const el = event.target;
-            const reply = el.parentNode.querySelector('input').value;
+            let reply = el.parentNode.querySelector('input').value;
             const parentNode2 = el.parentNode.parentNode;
             const patientUsername = parentNode2.querySelector('.patient-username').innerText.substr(1);
             const postText = parentNode2.querySelector('.post-txt').innerHTML.replaceAll("<br>", "</br>");
@@ -119,11 +119,13 @@ usersRef.once('value', (sanp) => {
                 for (let i = 0; i < PostKeys.length; i++) {
                     if (posts[PostKeys[i]].text == postText) {
                         const repliesRef = firebase.database().ref('users/' + patientUsername + '/posts/' + PostKeys[i] + '/replies');
+                        reply = "@" + username + ": " + reply;
                         repliesRef.push(reply);
                         parentNode2.querySelector('.replies').innerHTML +=
                             `<div class="alert alert-dark" role="alert" style="margin: 10px 0">
-                            ${reply}
-                        </div>`
+                                ${reply}
+                            </div>`;
+                        el.parentNode.querySelector('input').value = "";
                         return;
                     }
                 }

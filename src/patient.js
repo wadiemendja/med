@@ -29,6 +29,7 @@ firebaseRef.once('value', (sanp) => {
 });
 
 const shareClassBtn = document.getElementById('shareClassBtn');
+const checkBoxes = document.querySelector('.checkboxes').querySelectorAll('input');
 const textAria = document.getElementById('text');
 const uploadedImgAria = document.getElementById('uploadedImgs');
 const uploadedVidAria = document.getElementById('uploadedVid');
@@ -58,7 +59,14 @@ shareClassBtn.addEventListener('click', () => {
         textAria.style.borderColor = 'red';
         return;
     }
-    const text = addBreacks(textAria.value);
+    let checkedElemnts = "</br>";
+    checkBoxes.forEach((element)=>{
+        if (element.checked) {
+            checkedElemnts += "✔ " +element.parentNode.querySelector('label').innerText + "</br>";
+        }
+    });
+    console.log(checkedElemnts);
+    const text = addBreacks(textAria.value) + checkedElemnts;
     const date = new Date();
     const postDate = date.getMonth() + 1 + "/" + date.getDate().toString() + "/" + date.getFullYear() + " at " + date.getHours() + ":" + date.getMinutes();
     userPostsRef.push({
@@ -238,4 +246,7 @@ function getIntValue(value) {
 function clearPostAria() {
     media.innerHTML = "";
     textAria.value = "";
+    checkBoxes.forEach((element)=> {
+        element.checked = false;
+    });
 }
