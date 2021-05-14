@@ -28,6 +28,22 @@ firebaseRef.once('value', (sanp) => {
     usernameTag.innerText = username;
 });
 
+// on click usernameTag => go to profile
+usernameTag.addEventListener('click', () => {
+    location.href = "/" + username;
+});
+// on click user image => go to profile
+userImg.addEventListener('click', () => {
+    location.href = "/" + username;
+});
+
+// profile-dropped-btn
+const droppedProfileBtn = document.querySelector('.profile-dropped-btn');
+droppedProfileBtn.addEventListener('click', () => {
+    location.href = "/" + username;
+});
+
+
 const shareClassBtn = document.getElementById('shareClassBtn');
 const checkBoxes = document.querySelector('.checkboxes').querySelectorAll('input');
 const textAria = document.getElementById('text');
